@@ -8,6 +8,40 @@
         <component>
             <component-type>avatar</component-type>
         </component>
+        <attribute>
+            <description>this is style css dor avatar component</description>
+            <name>style</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>this is value of avatar text</description>
+            <name>name</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
     </tag>
+
+
+    <tag>
+        <tag-name>navBar</tag-name>
+        <component>
+            <component-type>navBar</component-type>
+        </component>
+        <attribute>
+            <description>this is style css dor avatar component</description>
+            <name>style</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>this is value of avatar text</description>
+            <name>appName</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+
+    </tag>
+
 
 </facelet-taglib>

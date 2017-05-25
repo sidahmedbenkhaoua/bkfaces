@@ -10,6 +10,7 @@ import javax.faces.component.UIComponentBase;
 import javax.faces.component.UIOutput;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
+
 @ResourceDependencies({
         @ResourceDependency(
                 name = "bkfaces-avatar.css", library = "css", target = "head")
@@ -30,14 +31,22 @@ public class AvatarComponent extends UIOutput {
     }
 
     @Override
-
     public void encodeBegin(FacesContext context) throws IOException {
 
-        String value = (String) getAttributes().get("value");
+        String name = (String) getAttributes().get("name");
+        String style = (String) getAttributes().get("style");
         ResponseWriter writer = context.getResponseWriter();
-        if (value != null) {
+        StringBuilder strCreateAvatar = new StringBuilder();
+        strCreateAvatar.append("class=\"gavatar\" ");
+        if (style != null) {
+            strCreateAvatar.append("style = \"" + style + "\"");
+        }
+        System.out.println(strCreateAvatar.toString());
 
-            writer.write("<div class=\"gavatar\">" + value + "</div>");
+
+        if (name != null) {
+
+            writer.write("<div " + strCreateAvatar.toString() + ">" + name + "</div>");
 
 
         } else {
